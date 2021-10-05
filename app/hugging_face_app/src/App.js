@@ -1,9 +1,12 @@
-import './App.css';
+import "./App.css";
+
+import {config} from "./config.js";
 
 
 function call_api() {
     const tweets = ["walking to the park", "finding the store", "and this and that", "what about this", "finally we will see"]
-    fetch("https://5000-chocolate-meerkat-z7hmwtyb.ws-us18.gitpod.io/inference?Sequences=" + tweets)//.join(","))
+    console.log("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + JSON.stringify(tweets))
+    fetch("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + tweets)//.join(","))
     .then(response => response.json())
     .then(data => console.log(data))
     .catch((error) => {
