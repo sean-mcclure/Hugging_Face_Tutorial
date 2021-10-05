@@ -1,0 +1,5 @@
+flask
+flask_restful
+transformers
+tensorflow
+flask_cors
