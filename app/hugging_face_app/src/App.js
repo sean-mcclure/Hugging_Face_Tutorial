@@ -3,9 +3,9 @@ import "./App.css";
 import {config} from "./config.js";
 
 function call_api() {
-    const tweets = ["walking to the park", "finding the store", "and this and that", "what about this", "finally we will see"];
-    console.log("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + tweets.join("&Sequences="));
-    fetch("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + tweets.join("&Sequences=")) //.join(","))
+    const tweets = ["I am angry about the pizza", "I am happy about the pizza", "let's have some dinner together"];
+    console.log("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + encodeURI(tweets.join("&Sequences=")));
+    fetch("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + encodeURI(tweets.join("&Sequences=")))
     .then(response => response.json())
     .then(data => console.log(data))
     .catch((error) => {

@@ -11,10 +11,18 @@ parser = reqparse.RequestParser()
 parser.add_argument(name="Sequences", type=str, action="append", help="The sequence to be classified", required=True)
 
 class Inference(Resource):
+    # A method corresponding to a GET request
     def get(self):
+        # Parsing the arguments we defined earlier
         args = parser.parse_args()
-        sequence = tokenizer(args["Sequences"], return_tensors="tf")
+        
+        # Tokenizing the sequence
+        sequence = tokenizer(args["Sequences"], return_tensors="tf", padding=True)
+        
+        # Obtaining a prediction
         prediction = logits_to_class_names(model(sequence))
+        
+        # Returning the prediction
         return {"Predictions": prediction}, 200
 
 api.add_resource(Inference, "/inference")
