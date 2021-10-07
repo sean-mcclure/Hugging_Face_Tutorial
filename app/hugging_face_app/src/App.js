@@ -1,4 +1,5 @@
 import "./App.css";
+/*import BarChart from "./BarChart.js";*/
 
 import {events} from "./events.js";
 

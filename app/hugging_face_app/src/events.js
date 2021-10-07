@@ -10,5 +10,32 @@ export const events = {
         .catch((error) => {
           console.error('Error:', error);
         })
+    },
+    read_tweets: function() {
+      var tweets = document.getElementById("textarea").value;
+      tweets = tweets.split("\n");
+      return (tweets)
+    },
+    draw_bar_chart : function() {
+      /*
+      var trace1 = {
+        type: 'bar',
+        x: [1, 2, 3, 4],
+        y: [5, 10, 2, 8],
+        marker: {
+            color: '#C8A2C8',
+            line: {
+                width: 2.5
+            }
+        }
+      };
+      var data = [trace1];
+      var layout = { 
+        title: 'Responsive to window\'s size!',
+        font: {size: 18}
+      };
+      var config = {responsive: true}
+      Plotly.newPlot("hold_plot", data, layout, config );
+      */
     }
 }
