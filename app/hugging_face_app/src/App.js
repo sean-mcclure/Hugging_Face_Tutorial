@@ -1,23 +1,21 @@
 import "./App.css";
 
-import {config} from "./config.js";
+import {events} from "./events.js";
 
-function call_api() {
-    const tweets = ["I am angry about the pizza", "I am happy about the pizza", "let's have some dinner together"];
-    console.log("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + encodeURI(tweets.join("&Sequences=")));
-    fetch("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + encodeURI(tweets.join("&Sequences=")))
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => {
-      console.error('Error:', error);
-    })
-}
+import {
+  FaArrowRight
+} from "react-icons/fa";
 
 function App() {
 
   return (
     <div className="App">
-      <button onClick={(event) => {call_api()}}>CLICK</button>
+      <button onClick={(event) => {events.call_api()}}>CLICK</button>
+      <div className="wrapper">
+        <div className="item"><textarea></textarea></div>
+        <div className="item"><FaArrowRight className="icon"/></div>
+        <div className="item"></div>
+      </div>
     </div>
   );
 }

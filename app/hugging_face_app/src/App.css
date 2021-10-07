@@ -1,3 +1,42 @@
-*{
+* {
   background: darkslategrey;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 45% 10% 45%;
+  gap: 10px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.item {
+  background: pink;
+  padding: 10px;
+}
+
+.item:nth-child(2) {
+  align-self: center;
+  text-align: center;
+}
+
+.icon {
+  fill: whitesmoke;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;      
+  background: grey;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  font-family: arial;
 }
