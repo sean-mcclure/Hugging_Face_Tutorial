@@ -1,31 +1,88 @@
-import React, {useState, useEffect} from 'react';
-import Plot from 'react-plotly.js';
+//https://www.pluralsight.com/guides/using-d3.js-inside-a-react-app
+import { useD3 } from './hooks/useD3';
+import React from 'react';
+import * as d3 from 'd3';
 
-function Chart(props) {
+function BarChart({ data }) {
+  const ref = useD3(
+    (svg) => {
+      const height = 500;
+      const width = 550;
+      const margin = { top: 20, right: 30, bottom: 30, left: 40 };
 
-    const [use_data, setData] = useState();
+      const x = d3
+        .scaleBand()
+        .domain(data.map((d) => d.year))
+        .rangeRound([margin.left, width - margin.right])
+        .padding(0.1);
 
-    const handleClick = () => {
-        var plot_data = ["", ""]
-        setTimeout(function() {
-            setData((use_data) => [use_data, plot_data]);
-        }, 2000)
-    };
+      const y1 = d3
+        .scaleLinear()
+        .domain([0, d3.max(data, (d) => d.sales)])
+        .rangeRound([height - margin.bottom, margin.top]);
 
-    useEffect(() => {
-        console.log("...")
-    })
+      const xAxis = (g) =>
+        g.attr("transform", `translate(0,${height - margin.bottom})`).call(
+          d3
+            .axisBottom(x)
+            .tickValues(
+              d3
+                .ticks(...d3.extent(x.domain()), width / 40)
+                .filter((v) => x(v) !== undefined)
+            )
+            .tickSizeOuter(0)
+        );
 
-    return (
-        <>
-        <button onClick={handleClick}>GO</button>
-        <Plot
-            var data = {use_data}
-            var config = {{responsive: true, "displayModeBar": false}}
-            var layout={ {width: 1000, height: 400, title: "Top 100 Topics"} }
-        />
-        </>
-    );
-  }
+      const y1Axis = (g) =>
+        g
+          .attr("transform", `translate(${margin.left},0)`)
+          .style("color", "steelblue")
+          .call(d3.axisLeft(y1).ticks(null, "s"))
+          .call((g) => g.select(".domain").remove())
+          .call((g) =>
+            g
+              .append("text")
+              .attr("x", -margin.left)
+              .attr("y", 10)
+              .attr("fill", "currentColor")
+              .attr("text-anchor", "start")
+              .text(data.y1)
+          );
 
-  export default Chart;
+      svg.select(".x-axis").call(xAxis);
+      svg.select(".y-axis").call(y1Axis);
+
+      svg
+        .select(".plot-area")
+        .attr("fill", "steelblue")
+        .selectAll(".bar")
+        .data(data)
+        .join("rect")
+        .attr("class", "bar")
+        .attr("x", (d) => x(d.year))
+        .attr("width", x.bandwidth())
+        .attr("y", (d) => y1(d.sales))
+        .attr("height", (d) => y1(0) - y1(d.sales));
+    },
+    [data.length]
+  );
+
+  return (
+    <svg
+      ref={ref}
+      style={{
+        height: "100%",
+        width: "100%",
+        marginRight: "0px",
+        marginLeft: "0px",
+        background: "whitesmoke"
+      }}
+    >
+      <g className="plot-area" />
+      <g className="x-axis" />
+      <g className="y-axis" />
+    </svg>
+  );
+}
+
+export default BarChart;
