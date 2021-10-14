@@ -69,3 +69,18 @@ textarea {
   padding: 10px;
   border-radius: 4px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    display: grid;
+    grid-template-rows:  45% 10% 45%;
+    grid-template-columns: 100%;
+  }
+  svg {
+    transform: rotate(90deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+}
