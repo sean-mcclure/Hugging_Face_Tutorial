@@ -27,10 +27,11 @@ function BarChart(props) {
   }
   return(
       <div className="barchart_wrapper">
-      <div className="barchart_item">ANGER<div id="bar_1"></div></div>
-      <div className="barchart_item">JOY<div id="bar_2"></div></div>
-      <div className="barchart_item">OPTIMISM<div id="bar_3"></div></div>
-      <div className="barchart_item">SADNESS<div id="bar_4"></div></div>
+        <div className="barchart_item"><div className="labels">ANGER</div><div className="labels">JOY</div><div className="labels">OPTIMISM</div><div className="labels">SADNESS</div></div>
+        <div className="barchart_item"><div id="bar_1"></div></div>
+        <div className="barchart_item"><div id="bar_2"></div></div>
+        <div className="barchart_item"><div id="bar_3"></div></div>
+        <div className="barchart_item"><div id="bar_4"></div></div>
     </div>
   )
 }

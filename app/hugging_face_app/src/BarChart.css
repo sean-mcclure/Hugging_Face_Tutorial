@@ -1,6 +1,6 @@
 .barchart_wrapper {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 10% 90%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
     width: 100%;
@@ -15,10 +15,33 @@
     color: white;
 }
 
+.barchart_item:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-column: 1 / span 4;
+}
+
 #bar_1, #bar_2, #bar_3, #bar_4 {
     position: absolute;
     bottom: 0;
     left:0;
     right: 0;
     background: #ffda79;
+}
+
+.labels {
+    background: transparent;
+}
+
+.labels:nth-child(2) {
+    margin-left: 15px;
+}
+
+.labels:nth-child(3) {
+    margin-left: 15px;
+}
+
+.labels:nth-child(4) {
+    margin-left: 15px;
 }
