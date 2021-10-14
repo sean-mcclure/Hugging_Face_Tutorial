@@ -7,6 +7,7 @@ export const events = {
   call_api: function() {
       const tweets = events.read_tweets();
       console.log(tweets)
+      console.log("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + encodeURI(tweets.join("&Sequences=")))
      // const tweets = ["I am angry about the pizza", "I am happy about the pizza", "let's have some dinner together"];
       fetch("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + encodeURI(tweets.join("&Sequences=")))
       .then(response => response.json())
@@ -18,7 +19,15 @@ export const events = {
   read_tweets: function() {
       var tweets = document.getElementById("pasted_tweets").value;
       tweets = tweets.split("\n");
+      tweets = events.clean_tweets(tweets)
       return (tweets)
+  },
+  clean_tweets : function(tweets) {
+       var res = [];  
+        tweets.forEach(function(tweet) {
+            res.push(tweet.replace(/[^\w\s]/gi, ''));
+        })
+      return(res)
   },
   array_occurences: function(arr) {
       const counts = {};
