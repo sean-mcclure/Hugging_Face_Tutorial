@@ -10,7 +10,7 @@ export const events = {
      // const tweets = ["I am angry about the pizza", "I am happy about the pizza", "let's have some dinner together"];
       fetch("https://" + config.api_port + "-" + config.api_url + "/" + config.api_endpoint + "?Sequences=" + encodeURI(tweets.join("&Sequences=")))
       .then(response => response.json())
-      .then(data => console.log(data.Predictions)) //events.array_occurences(data.Predictions))
+      .then(data => events.array_occurences(data.Predictions))
       .catch((error) => {
           console.error('Error:', error);
       })
@@ -25,6 +25,7 @@ export const events = {
       for(const num of arr) {
           counts[num] = counts[num] ? counts[num] + 1 : 1;
       }
+      console.log(counts)
       events.draw_plot(counts);
   },
   draw_plot : function(counts) {

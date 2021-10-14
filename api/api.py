@@ -17,7 +17,7 @@ class Inference(Resource):
         args = parser.parse_args()
         
         # Tokenizing the sequence
-        sequence = tokenizer(args["Sequences"], return_tensors="tf", padding=True)
+        sequence = tokenizer(args["Sequences"], return_tensors="tf", padding=True, max_length="none", truncation=True)
         
         # Obtaining a prediction
         prediction = logits_to_class_names(model(sequence))
