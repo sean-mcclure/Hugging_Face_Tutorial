@@ -117,7 +117,8 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Paste your tweets on the left, then click arrow.</h2>
+      <p className="title">TWEET TOPIC ANALYZER</p>
+      <p className="subtitle">Paste your tweets on the left, then click arrow.</p>
       <div className="wrapper">
         <div className="item"><textarea></textarea></div>
         <div className="item"><FaArrowRight className="icon" onClick={(event) => {
