@@ -92,7 +92,7 @@ function App() {
       <p className="title">TWEET TOPIC ANALYZER</p>
       <p className="subtitle">Paste your tweets on the left, then click arrow.</p>
       <div className="wrapper">
-        <div className="item"><textarea></textarea></div>
+        <div className="item"><textarea id="pasted_tweets"></textarea></div>
         <div className="item"><FaArrowRight className="icon" onClick={(event) => {
               events.call_api();
         }}/></div>

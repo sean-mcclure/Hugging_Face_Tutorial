@@ -26,15 +26,12 @@ function BarChart(props) {
       return(res)
   }
   return(
-    <>
-    <button onClick={(event) => {parse_data(props.data)}}></button>
-    <div className="barchart_wrapper">
+      <div className="barchart_wrapper">
       <div className="barchart_item">ANGER<div id="bar_1"></div></div>
       <div className="barchart_item">JOY<div id="bar_2"></div></div>
       <div className="barchart_item">OPTIMISM<div id="bar_3"></div></div>
       <div className="barchart_item">SADNESS<div id="bar_4"></div></div>
     </div>
-    </>
   )
 }
 // {parse_data(props.data)}
