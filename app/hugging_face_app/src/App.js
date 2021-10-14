@@ -27,88 +27,60 @@ const data = [
       "Freq": 34
     },
     {
-      "Letter" : "E",
+      "Letter" : "A",
       "Freq" : 54
     },
     {
-      "Letter" : "F",
+      "Letter" : "C",
       "Freq" : 21
     },
     {
-      "Letter" : "G",
+      "Letter" : "C",
       "Freq" : 57
     },
     {
-      "Letter" : "H",
+      "Letter" : "A",
       "Freq" : 31
     },
     {
-      "Letter" : "I",
+      "Letter" : "B",
       "Freq" : 17
     },
     {
-      "Letter" : "J",
+      "Letter" : "B",
       "Freq" : 5
     },
     {
-      "Letter" : "K",
+      "Letter" : "B",
       "Freq" : 23
     },
     {
-      "Letter" : "L",
+      "Letter" : "D",
       "Freq" : 39
     },
     {
-      "Letter" : "M",
+      "Letter" : "D",
       "Freq" : 29
     },
     {
-      "Letter" : "N",
+      "Letter" : "A",
       "Freq" : 33
     },
     {
-      "Letter" : "O",
+      "Letter" : "C",
       "Freq" : 18
     },
     {
-      "Letter" : "P",
+      "Letter" : "C",
       "Freq" : 35
     },
     {
-      "Letter" : "Q",
+      "Letter" : "C",
       "Freq" : 11
     },
     {
-      "Letter" : "R",
+      "Letter" : "C",
       "Freq" : 45
-    },
-    {
-      "Letter" : "S",
-      "Freq" : 43
-    },
-    {
-      "Letter" : "T",
-      "Freq" : 28
-    },
-    {
-      "Letter" : "U",
-      "Freq" : 26
-    },
-    {
-      "Letter" : "V",
-      "Freq" : 30
-    },
-    {
-      "Letter" : "X",
-      "Freq" : 5
-    },
-    {
-      "Letter" : "Y",
-      "Freq" : 4
-    },
-    {
-      "Letter" : "Z",
-      "Freq" : 2
     }
     ]
 function App() {

@@ -9,5 +9,15 @@
 }
 
 .barchart_item {
+    position: relative;
+    background: transparent;
+    text-align: center;
+}
+
+#bar_1, #bar_2, #bar_3, #bar_4 {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right: 0;
     background: #ffda79;
 }
