@@ -28,3 +28,5 @@ NOTE: If you're using a different port for the Flask API, set it here. Don't put
 #### Visit AllMyTweets.net to list all your tweets (enter username -> hit OK -> choose Tweets)
 
 Copy and and paste a chunk of tweets from AllMyTweets.net into the box on the left of the application. Click the arrow. The results show the sentiment breakdown of all your pasted tweets by relative percentage.
+
+![screenshot](https://collaboratescience.com/images/sents.png)
