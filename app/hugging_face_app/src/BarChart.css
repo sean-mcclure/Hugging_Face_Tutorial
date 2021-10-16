@@ -22,19 +22,3 @@
     right: 0;
     background: #ffda79;
 }
-
-.labels {
-    background: transparent;
-}
-
-.labels:nth-child(2) {
-    margin-left: 15px;
-}
-
-.labels:nth-child(3) {
-    margin-left: 15px;
-}
-
-.labels:nth-child(4) {
-    margin-left: 15px;
-}
