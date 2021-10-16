@@ -10,9 +10,12 @@ import {
 
 function App() {
   return (
+    <>
     <div className="App">
       <p className="title">TWEET TOPIC ANALYZER</p>
       <p className="subtitle">Paste your tweets on the left, then click arrow.</p>
+
+      <button onClick={(e) => {window.open("https://www.allmytweets.net", "_blank").focus()}}>AllMyTweets</button>
       <div className="wrapper">
         <div className="item"><textarea id="pasted_tweets"></textarea></div>
         <div className="item"><FaArrowRight className="icon" onClick={(event) => {
@@ -23,6 +26,7 @@ function App() {
         </div></div>
       </div>
     </div>
+    </>
   );
 }
 

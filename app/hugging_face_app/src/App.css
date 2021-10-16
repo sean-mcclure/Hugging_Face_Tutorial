@@ -2,6 +2,21 @@
   background: #218c74;
 }
 
+button {
+  display: flex;
+  height: auto;
+  width: auto;
+  border: none;
+  background: #ff5252;
+  color: whitesmoke;
+  border-radius: 4px;
+  font-size: 17px;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 .title, .subtitle {
   text-align: center;
   color: whitesmoke;
